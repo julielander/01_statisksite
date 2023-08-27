@@ -12,10 +12,10 @@ function showProduct(product) {
   // clone, ændre, appende
   const template = document.querySelector("template").content;
   const copy = template.cloneNode(true);
-  copy.querySelector(".productName").textContent = product.productName;
-  copy.querySelector(".subtle").textContent = product.subtle;
+  copy.querySelector(".productdisplayname").textContent = product.productdisplayname;
+  copy.querySelector(".articletype").textContent = product.articletype;
+  copy.querySelector(".brandname").textContent = product.brandname;
   copy.querySelector(".price").textContent = product.price;
-  copy.querySelector(".newPrice").textContent = product.newPrice;
   copy.querySelector(".discount").textContent = product.discount;
   copy.querySelector("img").src = product.img;
   const parent = document.querySelector(".grid");
