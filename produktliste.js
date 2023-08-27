@@ -1,29 +1,23 @@
 // fetche////
-fetch("https://kea-alt-del.dk/t7/superheroes/")
+fetch("https://kea-alt-del.dk/t7/api/products")
   .then((res) => res.json())
-  .then(showSuperheroes);
+  .then(products);
 
-function showSuperheroes(superheroes) {
+function showProducts(products) {
   // loope//
-  superheroes.forEach(showSuperhero);
+  products.forEach(showProduct);
 }
-function showSuperhero(superhero) {
-  console.log(superhero);
+function showProduct(product) {
+  console.log(product);
   // clone, ændre, appende
   const template = document.querySelector("template").content;
   const copy = template.cloneNode(true);
-  copy.querySelector(".realName").textContent = superhero.realName;
-  copy.querySelector(".alias").textContent = superhero.alias;
-  copy.querySelector(".origin").textContent = superhero.origin;
-  copy.querySelector(".day").textContent = superhero.day;
-  copy.querySelector(".month").textContent = superhero.month;
-  copy.querySelector(".year").textContent = superhero.year;
-  copy.querySelector(".height").textContent = superhero.height;
-  copy.querySelector(".powers").textContent = superhero.powers;
-  copy.querySelector(".weaknesses").textContent = superhero.weaknesses;
-  copy.querySelector(".isEvil").textContent = superhero.isEvil;
-  copy.querySelector(".active").textContent = superhero.active;
-  copy.querySelector("img").src = superhero.image;
+  copy.querySelector(".productName").textContent = product.productName;
+  copy.querySelector(".subtle").textContent = product.subtle;
+  copy.querySelector(".price").textContent = product.price;
+  copy.querySelector(".newPrice").textContent = product.newPrice;
+  copy.querySelector(".discount").textContent = product.discount;
+  copy.querySelector("img").src = product.img;
   const parent = document.querySelector(".grid");
   parent.appendChild(copy);
 }
