@@ -8,6 +8,7 @@ function showProduct(product) {
   document.querySelector(".nameBrand h3").textContent = product.productdisplayname;
   document.querySelector(".nameBrand .brand").textContent = product.brandname;
   document.querySelector(".nameBrand .articletype").textContent = product.articletype;
+  document.querySelector(".nameBrand .price").textContent = product.price;
   document.querySelector(".modelName").textContent = product.productdisplayname;
   document.querySelector(".inventoryNumber").textContent = product.id;
   document.querySelector(".underName").textContent = product.brandname;
