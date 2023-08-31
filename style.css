@@ -8,16 +8,24 @@ img {
   display: block;
   height: auto;
 }
+.kategoribillede {
+  width: 100%;
+}
 html,
 body {
   height: 100%;
   margin: 0;
   padding: 0;
 }
+main {
+  max-width: auto;
+  margin: 0 auto;
+}
 h1 {
   color: black;
   font-size: 1rem;
   font-family: Arial, Helvetica, sans-serif;
+  margin: 5px;
 }
 
 h2 {
@@ -26,19 +34,23 @@ h2 {
   font-family: Arial, Helvetica, sans-serif;
   margin: 50px 10px;
   text-align: center;
+  margin: 5px;
 }
 h3 {
   color: black;
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-family: Arial, Helvetica, sans-serif;
-  margin: 20px 5px;
+  margin: 5px;
+}
+dl {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 5px;
 }
 p {
   color: black;
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-family: Arial, Helvetica, sans-serif;
-  margin: 0px 5px;
-  line-height: 30px;
+  margin: 5px;
 }
 .kategoriliste div {
   padding: 40px;
@@ -81,7 +93,67 @@ p {
 .kategoriliste {
   display: grid;
   gap: 40px;
+  margin: 40px;
 }
+
+.discount {
+  background-color: yellow;
+  width: 120%;
+  text-align: center;
+  font-weight: 600;
+}
+
+.discount1 {
+  display: grid;
+  justify-content: left;
+}
+
+.soldOut {
+  background-color: lightgray;
+  display: none;
+  width: 80px;
+  padding: 2px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.product.udsolgt .soldOut {
+  display: block;
+}
+
+.pris {
+  font-weight: 800;
+  font-size: 0.8rem;
+}
+
+.grey {
+  color: grey;
+  margin: 5px;
+}
+
+.overlay {
+  position: relative;
+  display: inline-block;
+}
+.purchaseBox {
+  margin: 5px;
+}
+.overlay:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(128, 128, 128, 0.5); /* Gennemsigtigt gråt filter */
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.overlay:hover:before {
+  opacity: 0.7;
+}
+
 @media (min-width: 800px) {
   main {
     max-width: auto;
@@ -93,7 +165,7 @@ p {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 40px;
-    margin: 40px;
+    margin: 20px;
   }
 
   .kategoriliste div {
@@ -252,17 +324,77 @@ li a {
   }
 }
 
+#imgproduct {
+  height: 100%;
+  width: 80%;
+}
+#imgproductcontainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.right {
+  text-align: right;
+}
+.fed {
+  font-weight: 600;
+  margin-top: 8px;
+}
+.arial {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 5px;
+}
+hr {
+  color: grey;
+  width: 70%;
+  margin: 5px;
+}
+.mindre {
+  font-size: 0.8rem;
+}
+.inventoryNumber {
+  font-size: 0.8rem;
+}
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 10px;
+  margin: 10px;
+}
+.grid .product {
+  padding: 10px;
 }
 
+.grid2 {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+.gridLodret {
+  display: grid;
+  grid-template-columns: 1fr; /* En kolonne */
+  grid-template-rows: auto auto auto; /* Automatiske rækker */
+  gap: 50px;
+}
+
+#name {
+  font-size: 1rem;
+}
+.box1 {
+  margin-top: 20px;
+}
 @media (min-width: 800px) {
+  .box1 {
+    margin-top: 50px;
+  }
+  #name {
+    font-size: 1.5rem;
+  }
   .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 50px;
+    margin: 40px;
   }
   .grid5 {
     display: grid;
@@ -272,5 +404,10 @@ li a {
     width: 100%;
     height: 100%; /* Fast højde for at sikre ensartet størrelse */
     object-fit: cover;
+  }
+  .grid1-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
   }
 }
